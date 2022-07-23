@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.ExampleSpecification" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-23T17:50:27" hostname="DESKTOP-EEI1UG1" time="0.09">
+<testsuite name="com.example.ExampleSpecification" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-23T18:16:22" hostname="DESKTOP-EEI1UG1" time="0.236">
   <properties/>
-  <testcase name="should be a simple assertion" classname="com.example.ExampleSpecification" time="0.09"/>
+  <testcase name="should demonstrate given-when-then" classname="com.example.ExampleSpecification" time="0.236"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
