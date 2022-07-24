@@ -5,6 +5,17 @@ import com.example.exceptions.TooFewSidesException
 import spock.lang.Subject
 
 class ExampleSpecification extends Specification{
+
+    // setup method runs before every test method
+    // cleanup method cleans after every test method
+    // setupSpec runs once at the start
+    // cleanupSpec runs once at the end
+    void setupSpec() {
+    }
+
+    void setup() {
+    }
+
     def "should be a simple assertion"() {
         expect:
             1 == 1
@@ -86,4 +97,71 @@ class ExampleSpecification extends Specification{
         expect:
             renderer.getForegroundColour() == Colour.Red
     }
+
+    def "creating stub with documentation and use of and"() {
+        given: "a palette with red color as primary color"
+            Palette palette = Stub() // creates stub of concrete class
+            palette.getPrimaryColour() >> Colour.Red// we use right shift to run the method and return enum value RED
+        and : "a renderer with red palette"
+            @Subject
+            def renderer = new Renderer(palette)
+        expect: " renderer to use palette's primary color"
+            renderer.getForegroundColour() == Colour.Red
+    }
+
+    def "should use a helper method"() {
+        given:
+            Renderer renderer = Mock()
+            def shapeFactory = new ShapeFactory(renderer)
+        when:
+            def polygon = shapeFactory.createDefaultPolygon()
+        then:
+        // note when we use a helper method instead of below code we should use assert explicitly
+        //    polygon.numberOfSides == 4
+        //    polygon.renderer == renderer
+            checkDefaultPolygon(polygon, renderer)
+    }
+
+    def "use of with"() {
+        given:
+            Renderer renderer = Mock()
+            def shapeFactory = new ShapeFactory(renderer)
+        when:
+            def polygon = shapeFactory.createDefaultPolygon()
+        then:
+        // use of with
+        // also if the first condition fails it won't check the next one
+            with(polygon) {
+                numberOfSides == 4
+                renderer == renderer
+            }
+    }
+
+    def "use of verifyAll to check all the conditions"() {
+        given:
+            Renderer renderer = Mock()
+            def shapeFactory = new ShapeFactory(renderer)
+        when:
+            def polygon = shapeFactory.createDefaultPolygon()
+        then:
+            // use of verifyAll
+            //checks all the specified conditions
+            verifyAll(polygon) {
+            numberOfSides == 4
+            renderer == renderer
+        }
+    }
+
+    private void checkDefaultPolygon(polygon, renderer) {
+        assert polygon.numberOfSides == 4
+        assert polygon.renderer == renderer
+
+    }
+
+    void cleanup() {
+    }
+
+    void  cleanupSpec() {
+    }
+
 }

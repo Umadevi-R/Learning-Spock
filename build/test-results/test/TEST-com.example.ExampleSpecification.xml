@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.ExampleSpecification" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-24T13:23:53" hostname="DESKTOP-EEI1UG1" time="1.32">
+<testsuite name="com.example.ExampleSpecification" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-24T14:46:12" hostname="DESKTOP-EEI1UG1" time="1.216">
   <properties/>
-  <testcase name="mock a concrete class" classname="com.example.ExampleSpecification" time="1.32"/>
+  <testcase name="creating stub with documentation and use of and" classname="com.example.ExampleSpecification" time="1.216"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
