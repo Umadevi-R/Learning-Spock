@@ -2,6 +2,7 @@ package com.example
 
 import spock.lang.Specification
 import com.example.exceptions.TooFewSidesException
+import spock.lang.Subject
 
 class ExampleSpecification extends Specification{
     def "should be a simple assertion"() {
@@ -62,5 +63,27 @@ class ExampleSpecification extends Specification{
             1 | 3 || 3
             4 | 2 || 4
             5 | 5 || 5
+    }
+
+    def "mock a concrete class"() {
+        given:
+            Renderer renderer = Mock()
+            //Subject to specify which object is being tested
+            @Subject
+            def polygon = new Polygon(4, renderer)
+        when:
+            polygon.draw()
+        then:
+            4 * renderer.drawLine()
+    }
+
+    def "creating stub"() {
+        given:
+            Palette palette = Stub() // creates stub of concrete class
+            palette.getPrimaryColour() >> Colour.Red// we use right shift to run the method and return enum value RED
+            @Subject
+            def renderer = new Renderer(palette)
+        expect:
+            renderer.getForegroundColour() == Colour.Red
     }
 }

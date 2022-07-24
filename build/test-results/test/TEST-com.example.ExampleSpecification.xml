@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.ExampleSpecification" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-07-24T10:40:53" hostname="DESKTOP-EEI1UG1" time="0.065">
+<testsuite name="com.example.ExampleSpecification" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-24T13:23:53" hostname="DESKTOP-EEI1UG1" time="1.32">
   <properties/>
-  <testcase name="Use data tables for calculating maximum [a: 1, b: 3, max: 3, #0]" classname="com.example.ExampleSpecification" time="0.047"/>
-  <testcase name="Use data tables for calculating maximum [a: 4, b: 2, max: 4, #1]" classname="com.example.ExampleSpecification" time="0.001"/>
-  <testcase name="Use data tables for calculating maximum [a: 5, b: 5, max: 5, #2]" classname="com.example.ExampleSpecification" time="0.0"/>
+  <testcase name="mock a concrete class" classname="com.example.ExampleSpecification" time="1.32"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

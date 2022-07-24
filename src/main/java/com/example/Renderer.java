@@ -8,6 +8,7 @@ public class Renderer {
     }
 
     public void drawLine() {
+        System.out.println("Drawing Line");
     }
 
     public Colour getForegroundColour() {
